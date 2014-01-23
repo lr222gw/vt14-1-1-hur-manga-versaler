@@ -16,6 +16,9 @@ namespace Labb1
 
         protected void countButton_Click(object sender, EventArgs e)
         {
+            if (countButton.Text == "count")
+            {
+
             boxWithText.Enabled = false;
             int counter = 0;
             var content = boxWithText.Text;
@@ -23,13 +26,22 @@ namespace Labb1
             for (var i = 0; i < content.Length; i++ )
             {
                 var letterChecker = content[i];
-                if (letterChecker == char.ToUpper(letterChecker)) // om letterChecker är samma som när letterChecker har stor bokstav...
+                if (char.IsUpper(letterChecker) && !(char.IsWhiteSpace(letterChecker))) // om letterChecker har stor bokstav och inte är ett mellanrum...
                 {
                     counter++;
                 }
             }
 
             outputData.Text = counter.ToString();
+            countButton.Text = "Rensa";
+            }
+            else
+            {
+                boxWithText.Text = ""; // rensar formuläret
+                countButton.Text = "count";
+                boxWithText.Enabled = true;
+            }
+            
 
         }
     }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Labb1._default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Labb1._default" ViewStateMode="Disabled" %>
 
 <!DOCTYPE html>
 
@@ -12,8 +12,8 @@
         <asp:TextBox ID="boxWithText" runat="server" Height="353px" TextMode="MultiLine" Width="893px"></asp:TextBox>
     </div>
         <p>
-            <asp:Label ID="outputData" runat="server" Text="Label"></asp:Label>
-        <asp:Button ID="countButton" runat="server" Text="Button" OnClick="countButton_Click" />
+            <asp:Label ID="outputData" runat="server" Text="0"></asp:Label>
+        <asp:Button ID="countButton" runat="server" Text="count" OnClick="countButton_Click" />
         </p>
     </form>
 </body>
