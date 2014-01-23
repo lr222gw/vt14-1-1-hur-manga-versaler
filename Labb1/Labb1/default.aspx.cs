@@ -19,16 +19,16 @@ namespace Labb1
         {
             if (countButton.Text == "count")
             {
-                boxWithText.Enabled = false;
+                boxWithText.Enabled = false; // stänger av möjligheten att skriva i rutan..
 
-                var content = boxWithText.Text;
+                var content = boxWithText.Text; // hämtar ner data som ska bearbetas i GetNumberOfCapitals metoden..
 
-                int counter = TextAnalyzer.GetNumberOfCapitals(content);
+                int counter = TextAnalyzer.GetNumberOfCapitals(content); // hämtar ner data från funktionen som räknar ut hur många versaler...
 
-                outputData.Text = counter.ToString();
+                outputData.Text = counter.ToString(); // skriver in antalet versaler till outputData...
                 countButton.Text = "Rensa";
             }
-            else
+            else //återställer allt som det var innan man tryckt på knappen...
             {
                 boxWithText.Text = ""; // rensar formuläret
                 countButton.Text = "count";
