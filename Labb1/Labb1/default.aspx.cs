@@ -13,5 +13,24 @@ namespace Labb1
         {
 
         }
+
+        protected void countButton_Click(object sender, EventArgs e)
+        {
+            boxWithText.Enabled = false;
+            int counter = 0;
+            var content = boxWithText.Text;
+
+            for (var i = 0; i < content.Length; i++ )
+            {
+                var letterChecker = content[i];
+                if (letterChecker == char.ToUpper(letterChecker)) // om letterChecker är samma som när letterChecker har stor bokstav...
+                {
+                    counter++;
+                }
+            }
+
+            outputData.Text = counter.ToString();
+
+        }
     }
 }
