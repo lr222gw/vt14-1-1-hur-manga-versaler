@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Labb1.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,28 +19,21 @@ namespace Labb1
         {
             if (countButton.Text == "count")
             {
+                boxWithText.Enabled = false;
 
-            boxWithText.Enabled = false;
-            int counter = 0;
-            var content = boxWithText.Text;
+                var content = boxWithText.Text;
 
-            for (var i = 0; i < content.Length; i++ )
-            {
-                var letterChecker = content[i];
-                if (char.IsUpper(letterChecker) && !(char.IsWhiteSpace(letterChecker))) // om letterChecker har stor bokstav och inte är ett mellanrum...
-                {
-                    counter++;
-                }
-            }
+                int counter = TextAnalyzer.GetNumberOfCapitals(content);
 
-            outputData.Text = counter.ToString();
-            countButton.Text = "Rensa";
+                outputData.Text = counter.ToString();
+                countButton.Text = "Rensa";
             }
             else
             {
                 boxWithText.Text = ""; // rensar formuläret
                 countButton.Text = "count";
                 boxWithText.Enabled = true;
+                outputData.Text = "0";
             }
             
 

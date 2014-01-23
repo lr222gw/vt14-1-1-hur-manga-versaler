@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Labb1._default" ViewStateMode="Disabled" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Labb1._default" ViewStateMode="Disabled"%>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
     </div>
         <p>
             <asp:Label ID="outputData" runat="server" Text="0"></asp:Label>
-        <asp:Button ID="countButton" runat="server" Text="count" OnClick="countButton_Click" />
+        <asp:Button ID="countButton" runat="server" Text="count" OnClick="countButton_Click" ViewStateMode="Enabled" />
         </p>
     </form>
 </body>
